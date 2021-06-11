@@ -1,0 +1,25 @@
+$fonts: (
+  "roboto": "Roboto",
+  "raleway": "Raleway",
+);
+
+$colors: (
+  "accent-color": #2196f3,
+  "background-color": #2f303a,
+  "icon-box-background": #f5f4fa,
+  "title-color": #212121,
+  "portfolio-list-item-border": #eeeeee,
+  "social-links-color": #afb1b8,
+  "our-client-box-color": #e5e5e5,
+  "black-color": #000000,
+  "grey-color": #757575,
+  "white-color": #ffffff,
+);
+
+@function getColor($key) {
+  @return map-get($colors, $key);
+}
+
+@function getFonts($key) {
+  @return map-get($fonts, $key);
+} ;

@@ -1,0 +1,66 @@
+.about-us {
+  display: none;
+
+  @media screen and (min-width: $desktop) {
+    display: block;
+    padding-bottom: 94px;
+
+    &__title {
+      margin-bottom: 50px;
+
+      font-family: getFonts("roboto"), sans-serif;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 36px;
+      line-height: 42px;
+      letter-spacing: 0.03em;
+
+      text-align: center;
+
+      color: getColor("title-color");
+    }
+
+    &__list {
+      display: flex;
+    }
+
+    &__item {
+      position: relative;
+
+      &:not(:last-child) {
+        margin-right: 30px;
+      }
+
+      & img {
+        display: block;
+
+        width: 370px;
+        height: 294px;
+      }
+    }
+
+    &__box {
+      box-sizing: border-box;
+
+      position: absolute;
+      left: 0;
+      bottom: 0;
+
+      width: 100%;
+      height: 70px;
+      padding: 27px 0;
+
+      font-family: getFonts("roboto");
+      font-style: normal;
+      font-weight: bold;
+      font-size: 14px;
+      line-height: 16px;
+      text-align: center;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+
+      color: getColor("white-color");
+      background-color: rgba(47, 48, 58, 0.8);
+    }
+  }
+}

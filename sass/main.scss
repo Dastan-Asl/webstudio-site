@@ -1,0 +1,27 @@
+* {
+  box-sizing: border-box;
+
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+@import "./utils/variables";
+@import "./utils/breakpoints";
+@import "./components/container";
+@import "./components/header";
+@import "./components/hero";
+@import "./components/description";
+@import "./components/about-us";
+@import "./components/our-team";
+@import "./components/our-clients";
+@import "./components/footer";
+@import "./components/modal";
+@import "./components/portfolio";

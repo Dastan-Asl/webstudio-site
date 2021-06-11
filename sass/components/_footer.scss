@@ -1,0 +1,266 @@
+.footer {
+  padding: 60px 0;
+
+  background-color: getColor("background-color");
+
+  & .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  & .logo {
+    margin: 0 auto 20px;
+
+    color: getColor("white-color");
+  }
+
+  @media screen and (min-width: $tablet) {
+    & .container {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: start;
+      align-items: start;
+    }
+  }
+
+  @media screen and (min-width: $desktop) {
+    & .container {
+      display: flex;
+      flex-wrap: nowrap;
+    }
+
+    & .logo {
+      margin: 0 0 20px 0;
+    }
+  }
+}
+
+.footer-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  margin-bottom: 60px;
+
+  @media screen and (min-width: $tablet) {
+    margin-right: 165px;
+    margin-left: 61px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    margin: 0 70px 0 0;
+
+    align-items: flex-start;
+  }
+}
+
+.footer-adress {
+  &__item:not(:last-child) {
+    margin-bottom: 8px;
+  }
+
+  &__text {
+    font-family: getFonts("roboto"), sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 24px;
+    letter-spacing: 0.03em;
+    text-align: center;
+
+    color: getColor("white-color");
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__link {
+    font-family: getFonts("roboto"), sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 24px;
+    letter-spacing: 0.03em;
+
+    color: rgba(255, 255, 255, 0.6);
+
+    &:hover,
+    &:focus {
+      color: getColor("accent-color");
+    }
+  }
+
+  @media screen and (min-width: $desktop) {
+    &__item:not(:last-child) {
+      margin-bottom: 9px;
+    }
+
+    &__list {
+      align-items: flex-start;
+    }
+  }
+}
+
+.footer-social {
+  margin-bottom: 60px;
+
+  &__title {
+    margin-bottom: 20px;
+
+    font-family: getFonts("roboto"), sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 16px;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    text-align: center;
+
+    color: getColor("white-color");
+  }
+
+  &__list {
+    display: flex;
+  }
+
+  &__item:not(:last-child) {
+    margin-right: 10px;
+  }
+
+  &__item a {
+    display: inline-flex;
+    box-sizing: border-box;
+
+    width: 44px;
+    height: 44px;
+    padding: 12px;
+    border-radius: 50%;
+
+    background-color: rgba(255, 255, 255, 0.1);
+
+    &:hover,
+    &:focus {
+      background-color: getColor("accent-color");
+    }
+
+    & .footer-social__icon {
+      width: 20px;
+      height: 20px;
+
+      fill: getColor("white-color");
+    }
+  }
+
+  @media screen and (min-width: $desktop) {
+    margin: 12px 93px 0 0;
+
+    &__title {
+      text-align: left;
+    }
+  }
+}
+
+.footer-form {
+  margin: 0 auto;
+
+  &__label {
+    display: flex;
+    flex-direction: column;
+
+    margin-bottom: 20px;
+
+    font-family: getFonts("roboto"), sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 16px;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    text-align: center;
+
+    color: getColor("white-color");
+  }
+
+  &__input {
+    box-sizing: border-box;
+
+    width: 450px;
+    height: 50px;
+    border-radius: 4px;
+    padding: 15px 16px;
+    margin-top: 20px;
+
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    outline: none;
+    color: getColor("white-color");
+    background-color: getColor("background-color");
+
+    &::placeholder {
+      font-family: getFonts("roboto"), sans-serif;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 16px;
+      line-height: 20px;
+      letter-spacing: 0.03em;
+
+      color: rgba(255, 255, 255, 0.6);
+    }
+  }
+
+  &__button {
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 200px;
+    height: 50px;
+    margin: 0 auto;
+    border: none;
+    border-radius: 4px;
+
+    font-family: getFonts("roboto"), sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 30px;
+
+    color: getColor("white-color");
+    background-color: getColor("accent-color");
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  }
+
+  @media screen and (min-width: $desktop) {
+    display: flex;
+
+    margin: 12px 0 0;
+
+    &__label {
+      margin: 0 12px 0 0;
+
+      text-align-last: left;
+    }
+
+    &__input {
+      width: 358px;
+    }
+
+    &__button {
+      margin-top: 36px;
+    }
+  }
+}
+
+.icon-telegramm {
+  width: 24px;
+  height: 24px;
+  margin-left: 10px;
+
+  fill: getColor("white-color");
+}

@@ -1,0 +1,316 @@
+header {
+  border-bottom: 1px solid #ececec;
+
+  & .container {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding-top: 16px;
+    padding-bottom: 16px;
+  }
+
+  @media screen and (min-width: $tablet) {
+    & .container {
+      justify-content: start;
+
+      padding-top: 21px;
+      padding-bottom: 21px;
+    }
+  }
+
+  @media screen and (min-width: $desktop) {
+    & .container {
+      padding-top: 24px;
+      padding-bottom: 25px;
+    }
+  }
+}
+
+.logo {
+  font-family: getFonts("raleway"), sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 28px;
+  letter-spacing: 0.03em;
+
+  color: getColor("black-color");
+
+  & .logo--blue {
+    color: getColor("accent-color");
+  }
+
+  @media screen and (min-width: $tablet) {
+    margin-right: 88px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    margin-right: 93px;
+
+    font-size: 26px;
+    line-height: 31px;
+  }
+}
+
+.header-menu-button {
+  display: inline-flex;
+  border: none;
+  background-color: getColor("white-color");
+
+  @media screen and(min-width: $tablet) {
+    display: none;
+  }
+}
+
+.header-container {
+  position: absolute;
+  top: 100%;
+  left: 1px;
+  z-index: 1;
+  box-sizing: border-box;
+
+  width: $mobile;
+  padding: 48px 40px;
+
+  background-color: getColor("white-color");
+
+  @media screen and (min-width: $tablet) {
+    position: static;
+    z-index: 0;
+
+    display: flex;
+    align-items: center;
+
+    width: 100%;
+    padding: 0;
+  }
+}
+
+.no-open {
+  opacity: 0;
+  pointer-events: none;
+
+  @media screen and (min-width: $tablet) {
+    opacity: 1;
+    pointer-events: auto;
+  }
+}
+
+.icon-menu {
+  &:hover,
+  &:focus {
+    fill: getColor("accent-color");
+  }
+}
+
+.icon-cross {
+  display: none;
+}
+
+.is-open {
+  & .icon-cross {
+    display: block;
+
+    &:hover,
+    &:focus {
+      fill: getColor("accent-color");
+    }
+  }
+
+  & .icon-menu {
+    display: none;
+  }
+}
+
+.nav {
+  margin-bottom: 302px;
+
+  &__item:not(:last-child) {
+    margin-bottom: 32px;
+  }
+
+  &__link {
+    font-family: getFonts("roboto"), sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 40px;
+    line-height: 47px;
+    letter-spacing: 0.02em;
+
+    color: getColor("black-color");
+
+    &:hover,
+    &:focus {
+      color: getColor("accent-color");
+    }
+  }
+
+  @media screen and (min-width: $tablet) {
+    display: flex;
+    align-items: center;
+
+    margin-bottom: 0;
+    margin-right: 84px;
+
+    &__item:not(:last-child) {
+      margin-bottom: 0;
+    }
+
+    &__item:not(:last-child) {
+      margin-right: 50px;
+    }
+
+    &__link {
+      position: relative;
+
+      font-size: 14px;
+      line-height: 16px;
+
+      &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -32px;
+
+        display: block;
+
+        width: 100%;
+        height: 4px;
+        border-radius: 2px;
+
+        background-color: getColor("accent-color");
+        transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      &:not(.nav__link--active)::after {
+        opacity: 0;
+      }
+
+      &:hover::after {
+        opacity: 1;
+      }
+    }
+  }
+
+  @media screen and (min-width: $desktop) {
+    margin-right: 305px;
+  }
+}
+
+.adress {
+  margin-bottom: 64px;
+
+  &__item:not(:last-child) {
+    margin-bottom: 32px;
+  }
+
+  &__link {
+    font-family: getFonts("roboto"), sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 34px;
+    line-height: 40px;
+    letter-spacing: 0.02em;
+
+    color: getColor("grey-color");
+
+    &:hover,
+    &:focus {
+      color: getColor("accent-color");
+    }
+  }
+
+  &__icon {
+    display: none;
+  }
+
+  &__link:hover .adress__icon,
+  &__link:focus .adress__icon {
+    fill: getColor("accent-color");
+  }
+
+  @media screen and (min-width: $tablet) {
+    margin-bottom: 0;
+
+    &__item:not(:last-child) {
+      margin-bottom: 10px;
+    }
+
+    &__link {
+      display: flex;
+      align-items: center;
+      font-size: 12px;
+      line-height: 14px;
+    }
+
+    &__icon {
+      display: block;
+
+      width: 14px;
+      height: 10px;
+      margin-right: 8px;
+
+      fill: getColor("grey-color");
+    }
+
+    & .smartphone {
+      width: 10px;
+      height: 14px;
+    }
+  }
+
+  @media screen and (min-width: $desktop) {
+    display: flex;
+
+    &__item:not(:last-child) {
+      margin-bottom: 0;
+    }
+
+    &__item:not(:last-child) {
+      margin-right: 30px;
+    }
+
+    &__link {
+      font-size: 14px;
+      line-height: 16px;
+    }
+
+    &__icon {
+      width: 16px;
+      height: 12px;
+    }
+
+    & .smartphone {
+      width: 10px;
+      height: 16px;
+    }
+  }
+}
+
+.header-social {
+  display: flex;
+
+  &__item:not(:last-child) {
+    margin-right: 10px;
+    padding-right: 10px;
+    border-right: 1px solid rgba(33, 33, 33, 0.2);
+  }
+
+  &__links {
+    font-family: getFonts("roboto"), sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    letter-spacing: 0.03em;
+
+    color: getColor("accent-color");
+  }
+
+  @media screen and(min-width: $tablet) {
+    display: none;
+  }
+}

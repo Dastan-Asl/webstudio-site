@@ -1,0 +1,170 @@
+.our-team {
+  padding: 60px 0;
+
+  background-color: getColor("icon-box-background");
+
+  &__title {
+    margin-bottom: 30px;
+
+    font-family: getFonts("roboto"), sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 28px;
+    line-height: 33px;
+    letter-spacing: 0.03em;
+
+    text-align: center;
+
+    color: getColor("title-color");
+  }
+
+  @media screen and (min-width: $tablet) {
+    &__list {
+      display: flex;
+      flex-wrap: wrap;
+    }
+  }
+
+  @media screen and (min-width: $desktop) {
+    padding: 94px 0;
+
+    &__title {
+      margin-bottom: 50px;
+    }
+
+    &__list {
+      flex-wrap: nowrap;
+    }
+  }
+}
+
+.teammate {
+  box-sizing: border-box;
+  width: 450px;
+  padding-bottom: 24px;
+  border-radius: 0 0 4px 4px;
+
+  background-color: getColor("white-color");
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+
+  &:not(:last-child) {
+    margin-bottom: 30px;
+  }
+
+  & img {
+    width: 100%;
+    height: 460px;
+
+    margin-bottom: 30px;
+  }
+
+  &__name {
+    margin-bottom: 10px;
+
+    font-family: getFonts("roboto"), sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    letter-spacing: 0.03em;
+
+    text-align: center;
+
+    color: getColor("title-color");
+  }
+
+  &__role {
+    margin-bottom: 16px;
+
+    font-family: getFonts("roboto"), sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 19px;
+    letter-spacing: 0.03em;
+
+    text-align: center;
+
+    color: getColor("grey-color");
+  }
+
+  @media screen and (min-width: $tablet) {
+    width: 354px;
+
+    &:not(:last-child) {
+      margin-bottom: 0;
+    }
+
+    & img {
+      height: 374px;
+    }
+
+    &:nth-child(odd) {
+      margin-right: 30px;
+    }
+
+    &:nth-child(-n + 2) {
+      margin-bottom: 30px;
+    }
+  }
+
+  @media screen and (min-width: $desktop) {
+    width: 270px;
+
+    & img {
+      height: 260px;
+    }
+
+    &:nth-child(odd) {
+      margin-right: 0;
+    }
+
+    &:nth-child(-n + 2) {
+      margin-bottom: 0;
+    }
+
+    &:not(:last-child) {
+      margin-right: 30px;
+    }
+  }
+}
+
+.teammate-social-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__item:not(:last-child) {
+    margin-right: 10px;
+  }
+
+  &__item .social-icon {
+    width: 20px;
+    height: 20px;
+
+    fill: getColor("social-links-color");
+  }
+
+  &__item a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+
+    background-color: getColor("white-color");
+
+    &:hover,
+    &:focus {
+      background-color: getColor("accent-color");
+
+      & .social-icon,
+      & .social-icon {
+        fill: getColor("white-color");
+      }
+    }
+  }
+}

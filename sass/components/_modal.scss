@@ -1,0 +1,222 @@
+.backdrop {
+  position: fixed;
+  left: 0;
+  top: 0;
+
+  width: 100%;
+  height: 100%;
+
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.modal {
+  box-sizing: border-box;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 450px;
+  height: 609px;
+  border-radius: 4px;
+  padding: 40px;
+
+  background-color: getColor("white-color");
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+
+  &__close-button {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+
+    cursor: pointer;
+
+    &:hover .close-icon,
+    &:focus .close-icon {
+      fill: getColor("accent-color");
+    }
+  }
+
+  &__title {
+    margin-bottom: 12px;
+
+    font-family: getFonts("roboto"), sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 30px;
+    text-align: center;
+    letter-spacing: 0.03em;
+
+    color: getColor("title-color");
+  }
+
+  @media screen and (min-width: $desktop) {
+    width: 528px;
+    height: 581px;
+
+    &__title {
+      font-size: 20px;
+      line-height: 23px;
+    }
+  }
+}
+
+.close-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  width: 11px;
+  height: 11px;
+
+  transform: translate(-50%, -50%);
+}
+
+.modal-form {
+  &__label {
+    margin-bottom: 4px;
+
+    font-family: getFonts("roboto"), sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 14px;
+    letter-spacing: 0.01em;
+
+    color: getColor("grey-color");
+  }
+
+  &__input {
+    position: relative;
+
+    margin-bottom: 10px;
+    outline: none;
+
+    & > svg {
+      position: absolute;
+      top: 14px;
+      left: 15px;
+
+      width: 12px;
+      height: 12px;
+
+      fill: getColor("black-color");
+    }
+
+    & input:hover + svg,
+    & input:focus + svg {
+      fill: getColor("accent-color");
+    }
+
+    & > input {
+      box-sizing: border-box;
+
+      width: 370px;
+      height: 40px;
+      padding: 12px 42px;
+      border-radius: 4px;
+      border: 1px solid rgba(33, 33, 33, 0.2);
+
+      &:hover,
+      &:focus {
+        border-color: getColor("accent-color");
+        outline: none;
+      }
+    }
+  }
+
+  &__textarea {
+    display: block;
+    box-sizing: border-box;
+
+    width: 370px;
+    height: 120px;
+    padding: 12px 16px;
+    margin-bottom: 20px;
+    border: 1px solid rgba(33, 33, 33, 0.2);
+    border-radius: 4px;
+
+    resize: none;
+    outline: none;
+
+    &::placeholder {
+      font-family: getFonts("roboto"), sans-serif;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 14px;
+      line-height: 16px;
+      letter-spacing: 0.01em;
+
+      color: rgba(117, 117, 117, 0.5);
+    }
+  }
+
+  &__agree {
+    font-family: getFonts("roboto"), sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 14px;
+    letter-spacing: 0.03em;
+
+    color: getColor("grey-color");
+
+    & a {
+      text-decoration: underline;
+
+      color: getColor("accent-color");
+    }
+  }
+
+  &__button {
+    display: flex;
+    width: 200px;
+    height: 50px;
+    margin: 30px auto 0;
+    padding: 10px 55px;
+    border: none;
+    border-radius: 4px;
+
+    font-family: getFonts("roboto"), sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 30px;
+    letter-spacing: 0.06em;
+
+    color: getColor("white-color");
+    background-color: getColor("accent-color");
+  }
+
+  @media screen and (min-width: $desktop) {
+    &__input {
+      & > input {
+        width: 448px;
+      }
+    }
+
+    &__textarea {
+      width: 448px;
+
+      &::placeholder {
+        line-height: 14px;
+      }
+    }
+    &__agree {
+      font-size: 14px;
+      line-height: 24px;
+    }
+  }
+}
